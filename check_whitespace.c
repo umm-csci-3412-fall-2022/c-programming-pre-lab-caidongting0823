@@ -61,5 +61,10 @@ int is_clean(char const *str) {
   // greater than the second.
   int result = strcmp(str, cleaned);
 
+  // Clean up all the unused spaces data and free the memory
+  if (strlen(cleaned)>0) {
+	  free((char*)cleaned);
+  }
+
   return result == 0;
 }
